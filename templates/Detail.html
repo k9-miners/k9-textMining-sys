@@ -17,7 +17,7 @@
 
   <div class="upnav">
     <div class="cfflogo">
-      <a href="{{ url_for('dashboardToMain') }}" class =""><img class="cfflogo_img" src="{{ url_for('static', filename='images/logo.jpeg') }}" ></a>
+      <a href="{{ url_for('search')}}" class =""><img class="cfflogo_img" src="{{ url_for('static', filename='images/logo.jpeg') }}" ></a>
     </div>
 
     <div class="upnav_up">  
@@ -52,9 +52,8 @@
  <footer>
 
   <div class="downnav">
-    <a href=""> About </a>
+    <a href="{{ url_for('about')}}"> About </a>
     <a href=""> Help </a>
-    <a href=""> FAQ </a>
   </div>
 
  </footer>

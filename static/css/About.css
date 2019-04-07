@@ -1,0 +1,209 @@
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+/*body*/ 
+body{
+  font-family: 'Comfortaa', cursive;
+}
+
+/* Mobile devices customization */
+/*header*/
+/*upper navigation */
+.upnav{
+    text-align: left;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    word-spacing: 1px;
+    padding:0% 4% 2% 4%;
+    font-size:13px;
+    color:black;
+  }
+  
+  .ourlogo{
+    text-align: center;
+    font-size: 17px;
+    color:#ff8c00;
+    letter-spacing: 5px;
+    margin-bottom: 1%;
+  }
+  
+  .cfflogo
+  {
+    text-align: center;
+    align-content: center;
+    position:relative;
+    right:9px;
+  }
+  
+  .cfflogo_img
+  {
+    width:80px;
+    height:70px;
+  }
+  
+  input[type=text] 
+  {
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 25px;
+    font-size: 13px;
+    background-color: #eee;
+    padding: 4px 20px 4px 40px;
+    text-decoration: none;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  
+  input[type=text]:hover
+  {
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+  }
+  
+  a
+  {
+    text-decoration: none;
+  }
+
+  /* Body */
+  .whole_text_alignment {
+    text-align: center;
+  }
+
+  .photo {
+    width: 175px;
+    height: 230px;
+    margin-top: 20px;
+  }
+
+
+  .title_spacing {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    color: rgba(96, 150, 96, 0.781);
+  }
+
+  .name_spacing {
+    margin-top: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+  }
+
+  .position_spacing {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    color: rgb(71, 68, 68);
+  }
+  
+  .we_thank_you {
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-style: italic;
+  }
+
+  .facilitating {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+  }
+  /*bottom navigation bar*/
+  .downnav{
+    height: 8%;
+    text-decoration: none;
+    text-align: left;
+    border-top: 1px solid #eee;
+    word-spacing: 1px;
+    padding:0px 0px 15px 0px;
+    font-size:1em;
+    color:black;
+  }
+  
+  
+  .downnav a{
+    margin-left: 30px;
+  }
+  
+  
+  .downnav a:hover{
+    color:red;
+  }
+
+  /* --------------------------------------------------------- */
+/* Desktop customization */
+/* --------------------------------------------------------- */
+@media only screen and (min-width: 750px)
+{
+  .upnav
+  {
+    width: 100%;
+    top: 0;
+    padding: 1% 0 1% 1%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 150px 75%;
+  }
+
+  .cfflogo_img
+  {
+    width: 90px;
+    height: 80px;
+  }
+
+  .upnav_up
+  {
+    padding: 0% 0 0 0%;
+  }
+
+  .ourlogo{
+    text-align: center;
+    font-size: 20px;
+    color:#ff8c00;
+    letter-spacing: 3px;
+    margin-bottom: 1%;
+    height: 100%;
+    padding-top: 3%;
+    font-size: 2em;
+  }
+
+  .search_bar
+  {
+    width: 100%;
+  }
+
+  .item1 {grid-area: name1}
+  .item2 {grid-area: name2}
+  .item3 {grid-area: name3}
+  .item4 {grid-area: name4}
+  .item5 {grid-area: name5}
+
+  .grid-container {
+    display: grid;
+    grid-template-areas: 
+      'name1 name1 name2 name2 name3 name3'
+      'name4 name4 name4 name5 name5 name5';
+    grid-gap: 25px;
+    padding: 0px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .downnav
+  {
+    font-size: 1.3em;
+  }
+
+  .we_thank_you {
+    font-size: 20px;
+  }
+
+  .facilitating {
+    font-size: 25px;
+  }
+
+}

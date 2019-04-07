@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/About.css') }}">
+</head>
+
+
+<header>
+
+  <title>{{page_title}}</title>
+
+  <div class="upnav">
+    <div class="cfflogo">
+      <a href="{{ url_for('search')}}" class =""><img class="cfflogo_img" src="{{ url_for('static', filename='images/logo.jpeg') }}" ></a>
+    </div>
+
+    <div class="upnav_up">  
+      <div class="ourlogo">
+        Text Miner 
+      </div>
+    </div>
+  </div>
+ </header>
+
+ <body>
+    <!-- Implementation area -->
+    <div>
+        <div class="whole_text_alignment title_spacing">
+            Contributions
+        </div>
+
+        <div class="whole_text_alignment grid-container">
+            <div class="item1">
+                <img src="{{ url_for('static', filename='images/taj.jpeg') }}" alt="Photo 1" class="photo">
+                <div class="name_spacing">Md.Tajriyaan Chowdhury</div>
+                <div class="position_spacing">Project Manager</div>
+            </div>
+
+            <div class="item2">
+                <img src="{{ url_for('static', filename='images/fato.png') }}" alt="Photo 2" class="photo"/>
+                <div class="name_spacing">Fatima Mutiullah Tayeb</div>
+                <div class="position_spacing">Editor In Chief</div>
+            </div>
+
+            <div class="item3">
+                <img src="{{ url_for('static', filename='images/looi.JPG') }}" alt="Photo 3" class="photo">
+                <div class="name_spacing">Looi Weng Hoong</div>
+                <div class="position_spacing">Chief Software Architect</div>
+            </div>
+
+            <div class="item4">
+                <img src="{{ url_for('static', filename='images/shirin.png') }}" alt="Photo 5" class="photo">
+                <div class="name_spacing">Shirin Gard</div>
+                <div class="position_spacing">Chief Software Tester</div>
+            </div>
+
+            <div class="item5">
+                <img src="{{ url_for('static', filename='images/yong.jpg') }}" alt="Photo 5" class="photo">
+                <div class="name_spacing">Yong Kwok Ling</div>
+                <div class="position_spacing">Visual Designer</div>
+            </div>
+        </div>
+
+        <div class="whole_text_alignment we_thank_you">
+            We thank you for your hardwork and contribution to this project
+        </div>
+
+        <div class="whole_text_alignment facilitating">
+            Facilitating the wider use of underutilised crops...
+        </div>
+    </div>
+ </body>
+
+ <footer>
+
+    <div class="downnav">
+        <a href="{{ url_for('about')}}"> About </a>
+        <a href=""> Help </a>
+    </div>
+
+ </footer>
+
+</html>
+
+

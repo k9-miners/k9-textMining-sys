@@ -68,12 +68,13 @@ a
 
 /*bottom navigation bar*/
 .downnav{
+  height: 8%;
   text-decoration: none;
   text-align: left;
   border-top: 1px solid #eee;
   word-spacing: 1px;
   padding:0px 0px 15px 0px;
-  font-size:13px;
+  font-size:1em;
   color:black;
 }
 
@@ -227,5 +228,10 @@ a
   .paginationContainer
   {
     display: block;
+  }
+
+  .downnav
+  {
+    font-size: 1.3em;
   }
 }

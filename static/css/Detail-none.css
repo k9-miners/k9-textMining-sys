@@ -1,0 +1,175 @@
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+/*body*/ 
+body{
+  font-family: 'Comfortaa', cursive;
+}
+
+
+
+/* Mobile devices customization */
+/*header*/
+/*upper navigation */
+.upnav{
+  text-align: left;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  word-spacing: 1px;
+  padding:0% 4% 2% 4%;
+  font-size:13px;
+  color:black;
+}
+
+.ourlogo{
+  text-align: center;
+  font-size: 17px;
+  color:#ff8c00;
+  letter-spacing: 5px;
+  margin-bottom: 1%;
+}
+
+.cfflogo
+{
+  text-align: center;
+  align-content: center;
+  position:relative;
+  right:9px;
+}
+
+.cfflogo_img
+{
+  width:80px;
+  height:70px;
+}
+
+input[type=text] 
+{
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 25px;
+  font-size: 13px;
+  background-color: #eee;
+  padding: 4px 20px 4px 40px;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+
+input[type=text]:hover
+{
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+a
+{
+  text-decoration: none;
+}
+
+/*bottom navigation bar*/
+.downnav{
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height: 8%;
+  text-decoration: none;
+  text-align: left;
+  border-top: 1px solid #eee;
+  word-spacing: 1px;
+  font-size: 1em;
+  padding:0px 0px 15px 0px;
+  color:black;
+}
+
+
+.downnav a{
+  margin-left: 30px;
+}
+
+
+.downnav a:hover{
+  color:red;
+}
+
+/* Load more button for mobile view */
+.loadMoreContainer
+{
+  margin-left: 2%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+  text-align: center;
+  padding: 5%;
+}
+
+#loadMore
+{
+  font-size:1.3em;
+  padding-top: 20%;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  border-radius: 15px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #2e6da4;
+  transition: all 600ms ease-in-out;
+  -webkit-transition: all 600ms ease-in-out;
+  -moz-transition: all 600ms ease-in-out;
+  -o-transition: all 600ms ease-in-out;
+}
+
+/* --------------------------------------------------------- */
+/* Desktop customization */
+/* --------------------------------------------------------- */
+@media only screen and (min-width: 700px)
+{
+  .upnav
+  {
+    margin: 0 1% 0 2%;
+    padding: 1% 0 1% 0;
+    /* background-color: aqua; */
+    display: grid;
+    grid-template-columns: 150px 75%;
+  }
+
+  .cfflogo_img
+  {
+    width: 90px;
+    height: 80px;
+  }
+
+  .upnav_up
+  {
+    padding: 0% 0 0 0%;
+  }
+
+  .ourlogo{
+    text-align: center;
+    font-size: 20px;
+    color:#ff8c00;
+    letter-spacing: 3px;
+    margin-bottom: 1%;
+  }
+
+  .search_bar
+  {
+    width: 100%;
+  }
+
+  /* Load more button for desktop view */
+  .loadMoreContainer
+  {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  #loadMore
+  {
+    font-size: 1.8em;
+  }
+
+  .downnav
+  {
+    font-size: 1.3em;
+  }
+}
