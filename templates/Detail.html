@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Detail.css') }}">
+</head>
+
+
+<header>
+
+  <title>{{page_title}}</title>
+
+  <div class="upnav">
+    <div class="cfflogo">
+      <a href="{{ url_for('dashboardToMain') }}" class =""><img class="cfflogo_img" src="{{ url_for('static', filename='images/logo.jpeg') }}" ></a>
+    </div>
+
+    <div class="upnav_up">  
+      <div class="ourlogo">
+        Text Miner 
+      </div>
+
+      <div class="search">
+        <form action="{{url_for('search')}}" method="POST">
+          <input type="text" placeholder="Search" class="search_bar" value='{{input}}' name="queryText">
+        </form>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+ <body>
+    <input type='hidden' id='current_page'/>
+    <input type='hidden' id='show_per_page' />
+    <div id="result_blog_container"></div>
+    <nav class="paginationContainer">
+      <ul class="pagination">
+      </ul>
+    </nav>
+
+    <div class="loadMoreContainer">
+      <div id="loadMore">Load More</div>
+    </div>
+ </body>
+
+ <footer>
+
+  <div class="downnav">
+    <a href=""> About </a>
+    <a href=""> Help </a>
+    <a href=""> FAQ </a>
+  </div>
+
+ </footer>
+
+  <script type="text/javascript" src="{{ url_for('static', filename='js/detail.js') }}"></script>
+  <script type="text/javascript">raw_data({{posts|tojson}}) </script>
+
+</html>
+
+
