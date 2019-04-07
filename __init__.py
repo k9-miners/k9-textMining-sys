@@ -17,7 +17,12 @@ class queryInput:
     # Database Section
     # -------------------------------------------------------------------------
     # Connect to the database client
-    uri = "mongodb://localhost:27017/"
+
+    # connect from Local host
+    # uri = "mongodb://localhost:27017/"
+
+    # Connect remotely
+    uri = "mongodb://35.247.134.85:27017/"
     client = MongoClient(uri)
 
     # Get the database named "textMine"
@@ -338,22 +343,24 @@ app = Flask(__name__)
 def home():
 
     input = request.args['query']
+    print(input)
 
-    if input is None: 
-        return render_template('Detail.html', page_title = "Dashboard")
+    if input == "": 
+        return render_template('Detail-none.html', page_title = "Dashboard")
     else:
         global posts
         posts = queryObj.mainProcess(input)
-        if posts is None:
-            return render_template('Detail_none.html', page_title = "Dashboard", input=input)
+        if posts == []:
+            # if no result return no result page
+            return render_template('Detail-none.html', page_title = "Dashboard", input=input)
         else:
+            # if results are available return result page
             return render_template('Detail.html', page_title = "Dashboard", posts=posts, input=input)
 
 
 
 @app.route("/", methods = ["GET", "POST"])
 def search():
-
     if request.method == "POST":
         query = request.form['queryText']
 
@@ -361,18 +368,14 @@ def search():
 
     return render_template('Home.html', page_title = 'K9Miners')    
 
-@app.route("/")
-def dashboardToMain():
-    return render_template('Home.html')
+@app.route("/about")
+def about():
+    return render_template('About.html')
 
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('404.html'), 404
 
 
-@app.route("/blog-content", methods=['GET', 'POST'])
-def blogContent():
-    return render_template('Detail-content.html', posts=posts)
-
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

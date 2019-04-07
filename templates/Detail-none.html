@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Detail-none.css') }}">
+</head>
+
+
+<header>
+
+  <title>{{page_title}}</title>
+
+  <div class="upnav">
+    <div class="cfflogo">
+      <a href="{{ url_for('search')}}" class =""><img class="cfflogo_img" src="{{ url_for('static', filename='images/logo.jpeg') }}" ></a>
+    </div>
+
+    <div class="upnav_up">  
+      <div class="ourlogo">
+        Text Miner 
+      </div>
+
+      <div class="search">
+        <form action="{{url_for('search')}}" method="POST">
+          <input type="text" placeholder="Search" class="search_bar" value='{{input}}' name="queryText">
+        </form>
+      </div>
+    </div>
+  </div>
+ </header>
+
+ <body>
+    <div class="loadMoreContainer">
+      <div id="loadMore">No Relevant Data</div>
+    </div>
+ </body>
+
+ <footer>
+
+    <div class="downnav">
+      <a href="{{ url_for('about')}}"> About </a>
+      <a href=""> Help </a>
+    </div>
+
+ </footer>
+
+</html>
