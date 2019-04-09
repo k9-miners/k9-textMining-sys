@@ -19,11 +19,11 @@ class queryInput:
     # Connect to the database client
 
     # connect from Local host
-    # uri = "mongodb://localhost:27017/"
+    uri = "mongodb://localhost:27017/"
 
     # Connect remotely
-    uri = "mongodb://35.247.134.85:27017/"
-    client = MongoClient(uri)
+    # uri = "mongodb://35.247.134.85:27017/"
+    # client = MongoClient(uri)
 
     # Get the database named "textMine"
     textMineDB = client["textMine"]
@@ -142,11 +142,12 @@ class queryInput:
         # If the trigram is not null then query for the frequencies
         if(tri_string != []):
             for tri_token in tri_string:
-                total_tri_id_freq = []
+                total_tri_id_freq = {}
                 count = 0
                 for t in self.trigram_col.find({tri_token: {"$exists": True}}):
                     if(t['_id'] not in all_related_docs):
                         all_related_docs.append(t['_id'])
+                    print(t[tri_token])
                     total_tri_id_freq[t['_id']] = t[tri_token]
                     count = count + 1
                 total_tri_freq.append(total_tri_id_freq)
@@ -221,22 +222,25 @@ class queryInput:
     #  Function to compute the results
     def get_result(self, matrix, idf):
         result = []
-        # for each document column
-        for col in range(0, len(matrix[0])):
-            temp = 0
-            # for each token in row format
-            for row, df in zip(matrix, idf):
-                value = row[col]
-                # if value greater than 0
-                if value > 0:
-                    # modify the value based on the tf-idf formula
-                    # The df value
-                    value = 1 + math.log10(value)
-                # Sum each idf * df together
-                temp = temp + (float(df) * float(value))
-            result.append(temp)
-        
-        return result
+        try:
+            # for each document column
+            for col in range(0, len(matrix[0])):
+                temp = 0
+                # for each token in row format
+                for row, df in zip(matrix, idf):
+                    value = row[col]
+                    # if value greater than 0
+                    if value > 0:
+                        # modify the value based on the tf-idf formula
+                        # The df value
+                        value = 1 + math.log10(value)
+                    # Sum each idf * df together
+                    temp = temp + (float(df) * float(value))
+                result.append(temp)
+            
+            return result
+        except Exception as e:
+            return result
     
     def process_for_frontend(self, sorted_result, token):
         display_content = []
