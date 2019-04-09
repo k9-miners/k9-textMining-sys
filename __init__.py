@@ -23,7 +23,7 @@ class queryInput:
 
     # Connect remotely
     # uri = "mongodb://35.247.134.85:27017/"
-    # client = MongoClient(uri)
+    client = MongoClient(uri)
 
     # Get the database named "textMine"
     textMineDB = client["textMine"]
