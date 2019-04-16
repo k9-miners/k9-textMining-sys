@@ -19,10 +19,10 @@ class queryInput:
     # Connect to the database client
 
     # connect from Local host
-    uri = "mongodb://localhost:27017/"
+    # uri = "mongodb://localhost:27017/"
 
     # Connect remotely
-    # uri = "mongodb://35.247.134.85:27017/"
+    uri = "mongodb://35.247.134.85:27017/"
     client = MongoClient(uri)
 
     # Get the database named "textMine"
@@ -356,10 +356,10 @@ def home():
         posts = queryObj.mainProcess(input)
         if posts == []:
             # if no result return no result page
-            return render_template('Detail-none.html', page_title = "Dashboard", input=input)
+            return render_template('Detail-none.html', page_title = "cropText No Result", input=input)
         else:
             # if results are available return result page
-            return render_template('Detail.html', page_title = "Dashboard", posts=posts, input=input)
+            return render_template('Detail.html', page_title = "cropText-Dashboard", posts=posts, input=input)
 
 
 
@@ -370,7 +370,7 @@ def search():
 
         return redirect(url_for('home', query=query))
 
-    return render_template('Home.html', page_title = 'K9Miners')    
+    return render_template('Home.html', page_title = 'cropText')    
 
 @app.route("/about")
 def about():
