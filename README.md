@@ -2,6 +2,7 @@
 K9miners Crop Information Text Mining System
 Developed for CFF
 
+This repo contains the crawling system  to extract crop-related data from the web and the text mining system to stor and retrieve information from created database
 ### Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -9,6 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 ```
 Python3
+Anaconda
 ```
 ### Installing
 
