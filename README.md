@@ -28,6 +28,18 @@ Run
 ```
 python3 __init__.py
 ```
+Your Application is ready when you see the following
+```
+ * Serving Flask app "__init__" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 793-579-396
+```
 ### Authors
 
 Looi Weng Hoong
