@@ -19,10 +19,10 @@ class queryInput:
     # Connect to the database client
 
     # connect from Local host
-    uri = "mongodb://localhost:27017/"
+    # uri = "mongodb://localhost:27017/"
 
     # Connect remotely
-    # uri = "mongodb://35.247.134.85:27017/"
+    uri = "mongodb://35.247.134.85:27017/"
     client = MongoClient(uri)
 
     # Get the database named "textMine"
@@ -334,7 +334,6 @@ class queryInput:
 
         sorted_result = sorted(sorted_result, key=itemgetter(1), reverse=True)
         # print(sorted_result)
-        # self.process_for_frontend(sorted_result, lemmatized)
 
         # Return the structurized data to be processed in the front-end
         return self.process_for_frontend(sorted_result, lemmatized)
